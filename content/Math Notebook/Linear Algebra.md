@@ -1,7 +1,7 @@
-I added this shit, give me money$
 
 
-## Symmetric Matrix (Real)
+
+## Symmetric Matrix (Assume $\mathbb{R}^{n\times n}$)
 
 > [!definition]
 > A real symmetric matrix satisfies
@@ -11,39 +11,39 @@ I added this shit, give me money$
 
 > [!property]
 > - Has $n$ real eigenvalues $\lambda_1, \dots, \lambda_n$
-> - Has $n$ orthonormal eigenvectors $q_1, \dots, q_n$
+> - Has $n$ orthonormal eigenvectors $q_1, \dots, q_n \in \mathbb{R}^n$ 
+> - The \# of positive eigenvalues = \# of positive pivots. In fact, for symmetric real matrix, the signs of the eigenvalues are the same as those of the pivots
 
-^8b3e0a
-
-> [!theorem] Spectral Decomposition
+> [!theorem] Spectral Decomposition 
 > $$
-> S = Q \Lambda Q^{-1} = Q \Lambda Q^T = \sum_{i=1}^n \lambda_i q_i q_i^T
+> S = Q \Lambda Q^{-1} = Q \Lambda Q^H = \sum_{i=1}^n \lambda_i q_i q_i^H
 > $$
+> The theorem applies to complex case as well
 
 ---
 
-## Anti-Symmetric Matrix
+## Real Anti-Symmetric Matrix
 
 > [!definition]
-> A matrix satisfies
+> A real matrix satisfying
 > $$
 > A = -A^T
 > $$
 
-> [!property]
-> - Eigenvalues are purely imaginary  
-> - Eigenvectors can be chosen orthonormal (complex)
+
+
 
 > [!result]
 > For any real vector $x$:
 > $$
 > x^T A x = 0
 > $$
-
-> [!result]
 > $$
 > \det(A) \ge 0
 > $$
+> for $3\times 3$ case, $I\pm A$ is invertible and $B=(I+A)(I-A)^{-1}$ are orthogonal
+
+
 
 ---
 
@@ -54,7 +54,7 @@ I added this shit, give me money$
 > $$
 > A \bar{x} = \bar{\lambda} \bar{x}
 > $$
-> Eigenvalues come in conjugate pairs.
+> Eigenvalues come in conjugate pairs. The real and complex part of $x$ are not linearly dependent here.
 
 ---
 
@@ -76,18 +76,20 @@ I added this shit, give me money$
 ## Schur’s Theorem
 
 > [!theorem]
-> Every square matrix can be written as
+> **Schur Decomposition**  
+> Every square complex matrix can be written as
+>
 > $$
 > A = Q T Q^{-1}
 > $$
-
-> [!property]
-> - $Q^{-1} = Q^H$ (unitary)  
-> - $T$ is upper triangular  
-> - Eigenvalues appear on the diagonal  
-
-> [!note]
-> If eigenvalues are real, $Q$ can be chosen real:
+>
+> where:
+> - $Q^{-1} = Q^H$ (unitary)
+> - $T$ is upper triangular
+> - Eigenvalues appear on the diagonal of $T$
+>
+> If $A$ is real and the eigenvalues of $A$ are real, then $Q$ and $T$ can be chosen real, and
+>
 > $$
 > Q^T Q = I
 > $$
@@ -105,7 +107,7 @@ I added this shit, give me money$
 > [!equivalent]
 > - $\lambda_i > 0$  
 > - All pivots $> 0$  
-> - All leading principal minors $> 0$  
+> - All leading principal minors (upper left determinants) $> 0$  
 
 ---
 
@@ -126,8 +128,8 @@ I added this shit, give me money$
 > $$
 
 > [!result]
-> - Independent columns → positive definite  
-> - Dependent columns → semidefinite  
+> - Independent columns is equivalent to $S$ being positive definite  
+> - Dependent columns is equivalent to $S$ being semidefinite  
 
 ---
 
@@ -138,7 +140,7 @@ I added this shit, give me money$
 > x^T S x = 1
 > $$
 > - Ellipse if $S$ is PD  
-> - Hyperbola otherwise  
+
 
 ---
 
